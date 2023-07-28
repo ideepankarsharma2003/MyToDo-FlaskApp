@@ -1,0 +1,51 @@
+Static Files ka content seedha seedha render hoga !!!
+http://127.0.0.1:5000/static/lucky.txt
+
+
+(venv) PS C:\Deepankar\Projects\Flask> pip install flask-sqlalchemy
+Looking in indexes: https://pypi.org/simple, https://pypi.ngc.nvidia.com
+Collecting flask-sqlalchemy
+  Downloading flask_sqlalchemy-3.0.5-py3-none-any.whl (24 kB)
+Requirement already satisfied: flask>=2.2.5 in c:\deepankar\projects\flask\venv\lib\site-packages (from flask-sqlalchemy) (2.3.2)
+Collecting sqlalchemy>=1.4.18 (from flask-sqlalchemy)
+  Downloading SQLAlchemy-2.0.19-cp39-cp39-win_amd64.whl (2.0 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 61.6 kB/s eta 0:00:00
+Requirement already satisfied: Werkzeug>=2.3.3 in c:\deepankar\projects\flask\venv\lib\site-packages (from flask>=2.2.5->flask-sqlalchemy) (2.3.6)
+Requirement already satisfied: Jinja2>=3.1.2 in c:\deepankar\projects\flask\venv\lib\site-packages (from flask>=2.2.5->flask-sqlalchemy) (3.1.2)
+Requirement already satisfied: itsdangerous>=2.1.2 in c:\deepankar\projects\flask\venv\lib\site-packages (from flask>=2.2.5->flask-sqlalchemy) (2.1.2)
+Requirement already satisfied: click>=8.1.3 in c:\deepankar\projects\flask\venv\lib\site-packages (from flask>=2.2.5->flask-sqlalchemy) (8.1.6)
+Requirement already satisfied: blinker>=1.6.2 in c:\deepankar\projects\flask\venv\lib\site-packages (from flask>=2.2.5->flask-sqlalchemy) (1.6.2)
+Requirement already satisfied: importlib-metadata>=3.6.0 in c:\deepankar\projects\flask\venv\lib\site-packages (from flask>=2.2.5->flask-sqlalchemy) (6.8.0)
+Collecting typing-extensions>=4.2.0 (from sqlalchemy>=1.4.18->flask-sqlalchemy)
+  Downloading typing_extensions-4.7.1-py3-none-any.whl (33 kB)
+Collecting greenlet!=0.4.17 (from sqlalchemy>=1.4.18->flask-sqlalchemy)
+  Downloading greenlet-2.0.2-cp39-cp39-win_amd64.whl (192 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 192.1/192.1 kB 61.6 kB/s eta 0:00:00
+Requirement already satisfied: colorama in c:\deepankar\projects\flask\venv\lib\site-packages (from click>=8.1.3->flask>=2.2.5->flask-sqlalchemy) (0.4.6)
+Requirement already satisfied: zipp>=0.5 in c:\deepankar\projects\flask\venv\lib\site-packages (from importlib-metadata>=3.6.0->flask>=2.2.5->flask-sqlalchemy) (3.16.2)
+Requirement already satisfied: MarkupSafe>=2.0 in c:\deepankar\projects\flask\venv\lib\site-packages (from Jinja2>=3.1.2->flask>=2.2.5->flask-sqlalchemy) (2.1.3)
+Installing collected packages: typing-extensions, greenlet, sqlalchemy, flask-sqlalchemy
+Successfully installed flask-sqlalchemy-3.0.5 greenlet-2.0.2 sqlalchemy-2.0.19 typing-extensions-4.7.1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+********************
+
+CREATING DATABASE
+
+>>> from app import app, db    
+>>> with app.app_context():
+...     db.create_all() 

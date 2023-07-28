@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock title %}
+{% block body %}
+
+
+    <div class="container my-3">
+        <h2>Update To-do</h2>
+        <form action="/" method="post">
+            <div class="mb-3">
+                <label for="task" class="form-label">Task Name</label>
+                <input type="text" class="form-control" name="task" id="task" aria-describedby="emailHelp">
+                <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+            </div>
+            <div class="mb-3">
+                <label for="desc" class="form-label">Task Description</label>
+                <input type="text" class="form-control" name="desc" id="desc">
+            </div>
+            <!-- <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div> -->
+            <button type="submit" class="btn btn-dark">Submit</button>
+        </form>
+    </div>
+
+
+    <div class="container my-3">
+        <h2>Your To-Dos</h2>
+
+        {% if all_todo|length==0 %}
+
+                <div class="alert alert-dark" role="alert" >
+                    <center><b>No To-Dos Found, Add Something to your To-Do list 😁</b></center>
+                </div>
+
+        {% else %}
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Task No.</th>
+                    <th scope="col">Task Name</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Time</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+
+
+                {% for todo in all_todo %}
+                <tr>
+                    <!-- <th scope="row">{{todo.sno}}</th> -->
+                    <th scope="row">{{loop.index}}</th>
+                    <!-- <td >{{todo.sno}}</td> -->
+                    <td>{{todo.title}}</td>
+                    <td>{{todo.Desc}}</td>
+                    <td>{{todo.date_created}}</td>
+                    <td>
+                        <a href="/update/{{todo.sno}}" type="button"
+                            class="btn btn-warning btn-outline-dark btn-sm mx-1"
+                            style="color: solid black; font-weight: bold;">Update</a>
+                        <a href="/delete/{{todo.sno}}" type="button" class="btn btn-danger btn-outline-dark btn-sm mx-1"
+                            style="color: whitesmoke; font-weight: bold;">Delete </a>
+                    </td>
+                </tr>
+                {% endfor %}
+                <!-- <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td colspan="2">Larry the Bird</td>
+                    <td>@twitter</td>
+                </tr> -->
+            </tbody>
+        </table>
+        {% endif %}
+    </div>
+
+
+
+    
+        
+{% endblock body %}
